@@ -1,13 +1,9 @@
-export type Alimento = {
+export interface Alimento {
   id: number;
   nome: string;
   calorias: number;
   proteinas: number;
   carboidratos: number;
-};
-
-export type Usuario = {
-  id: number;
-  email: string;
-  nome: string;
-};
+  gorduras?: number;
+  porcao?: string;
+}

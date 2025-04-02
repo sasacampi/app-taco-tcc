@@ -352,3 +352,18 @@ export const alimentosTACO: Alimento[] = [
     carboidratos: 10,
   },
 ];
+
+export const mockFoodApi = {
+  fetchAll: () =>
+    new Promise((resolve) => {
+      setTimeout(() => resolve(alimentosTACO), 500);
+    }),
+
+  searchByName: (query: string) =>
+    new Promise((resolve) => {
+      const results = alimentosTACO.filter((food) =>
+        food.nome.toLowerCase().includes(query.toLowerCase())
+      );
+      setTimeout(() => resolve(results), 500);
+    }),
+};
